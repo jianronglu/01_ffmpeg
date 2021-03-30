@@ -17,11 +17,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(sender, &Sender::exit, receiver, &Receiver::handleExit);
 
-    emit sender->exit();
+    sender->exit();
 
     connect(sender, &Sender::exit_2, receiver, &Receiver::handleExit_2);
 
-    int a = emit sender->exit_2(10,30);
+    int a = sender->exit_2(10,30);
 
     qDebug() << a;
 
@@ -35,6 +35,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+// on_控件的变量名_事件名
 void MainWindow::on_firstButton_clicked()
 {
     qDebug() << ui->firstButton->text();
