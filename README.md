@@ -1,7 +1,8 @@
 # 01_ffmpeg
 
 ##### 练习自定义槽函数
-##### 1、Sender
+## 注意: Sender 参数个数可以 >= Receiver 的，但是反过来不行。假如 Receiver 接收参数个数比 Sender 传的多，则不会使用不安全内存地址，导致不可预知结果。
+##### 1、Sender 
 ```c++
 // sender.h
 #ifndef SENDER_H
